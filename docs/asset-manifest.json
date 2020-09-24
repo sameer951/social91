@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/spaceXData/static/css/main.69eda509.chunk.css",
+    "main.js": "/spaceXData/static/js/main.194ca333.chunk.js",
+    "main.js.map": "/spaceXData/static/js/main.194ca333.chunk.js.map",
+    "runtime-main.js": "/spaceXData/static/js/runtime-main.79c6887b.js",
+    "runtime-main.js.map": "/spaceXData/static/js/runtime-main.79c6887b.js.map",
+    "static/css/2.9c8c8187.chunk.css": "/spaceXData/static/css/2.9c8c8187.chunk.css",
+    "static/js/2.b7d7eff1.chunk.js": "/spaceXData/static/js/2.b7d7eff1.chunk.js",
+    "static/js/2.b7d7eff1.chunk.js.map": "/spaceXData/static/js/2.b7d7eff1.chunk.js.map",
+    "index.html": "/spaceXData/index.html",
+    "precache-manifest.508770ec2e7435abd3b4c93f239aede2.js": "/spaceXData/precache-manifest.508770ec2e7435abd3b4c93f239aede2.js",
+    "service-worker.js": "/spaceXData/service-worker.js",
+    "static/css/2.9c8c8187.chunk.css.map": "/spaceXData/static/css/2.9c8c8187.chunk.css.map",
+    "static/css/main.69eda509.chunk.css.map": "/spaceXData/static/css/main.69eda509.chunk.css.map",
+    "static/js/2.b7d7eff1.chunk.js.LICENSE.txt": "/spaceXData/static/js/2.b7d7eff1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.79c6887b.js",
+    "static/css/2.9c8c8187.chunk.css",
+    "static/js/2.b7d7eff1.chunk.js",
+    "static/css/main.69eda509.chunk.css",
+    "static/js/main.194ca333.chunk.js"
+  ]
+}

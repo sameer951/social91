@@ -31,7 +31,7 @@ class SpaceHistory extends MyComponent {
             return UI;
         });
         return <div>
-            <Table dataSource={dataSource} columns={this.columns} />
+            <Table dataSource={dataSource} columns={this.columns} loading={this.props?.past?.isLoading}  />
             {/* Hi {JSON.stringify(this.props.past?.spaceDataList)} */}
         </div>
     }

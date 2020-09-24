@@ -6,7 +6,13 @@ export const HistoryReduces = (state: any = {}, action: any) => {
         case historyTypes.FETCH_PASTSPACE_DATA:
             return {
                 ...state,
-                spaceDataList: action.payload
+                spaceDataList: action.payload,
+                isLoading:false
+            };
+        case historyTypes.IS_LOADUNG:
+            return {
+                ...state,
+                isLoading: action.payload
             };
         default:
             return state;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
-    DashboardOutlined,
     DatabaseOutlined,
     HistoryOutlined
 } from '@ant-design/icons';
@@ -13,8 +12,9 @@ class LayoutComponet extends React.Component {
         collapsed: true,
         // menuIndex: 0
     };
+    props;
     onCollapse = collapsed => {
-        console.log(collapsed);
+        console.log(this.state?.collapsed);
         this.setState({ collapsed });
     };
 
@@ -44,8 +44,17 @@ class LayoutComponet extends React.Component {
     render() {
         let menuIndex = this.menuList.findIndex(menu => menu.route === this.props.location.pathname);
         return <React.Fragment>
-            <Layout theme="light" style={{ minHeight: '100vh' }}>
-                <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse} style={{ position: "fixed", top: "0px", height: "100vh", zIndex: "12500" }}>
+            <Layout theme="light" style={{ minHeight: "100vh" }}>
+                <Sider style={{ position: "fixed", top: "0px", height: "100vh", zIndex: "12500" }}
+                    breakpoint="lg"
+                    collapsedWidth="0"
+                    onBreakpoint={broken => {
+                        console.log(broken);
+                    }}
+                    onCollapse={(collapsed, type) => {
+                        console.log(collapsed, type);
+                        this.onCollapse(collapsed);
+                    }}>
                     <div className="logo" />
                     <Menu theme="dark" defaultSelectedKeys={['menuItem' + menuIndex]} mode="inline">
                         {this.menuList.map((menu, index) =>
@@ -58,17 +67,18 @@ class LayoutComponet extends React.Component {
                                 icon={menu.icon}>
                                 {menu.label}
                             </Menu.Item>)}
-
                     </Menu>
                 </Sider>
-                <Layout className="site-layout">
-                    <Content style={{ margin: '24px 16px 0', marginLeft: this.state?.collapsed ? '84px' : '224px' }}>
-                        <Breadcrumb style={{ margin: '16px 0' }}>
-                            <Breadcrumb.Item>SpaceX</Breadcrumb.Item>
-                            <Breadcrumb.Item>{this.menuList?.[menuIndex]?.label || this.props.location.pathname.split('/')[1]}</Breadcrumb.Item>
-                        </Breadcrumb>
-                        <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-                            {this.props.children}
+                <Layout >
+                    <Content style={{ margin: '24px 16px 0', marginLeft: this.state?.collapsed ? '24px' : '224px' }}>
+                        <div style={{ padding: 24, minHeight: 360 }}>
+                            <Breadcrumb style={{ margin: '16px 0' }}>
+                                <Breadcrumb.Item>SpaceX</Breadcrumb.Item>
+                                <Breadcrumb.Item>{this.menuList?.[menuIndex]?.label || this.props.location.pathname.split('/')[1]}</Breadcrumb.Item>
+                            </Breadcrumb>
+                            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+                                {this.props.children}
+                            </div>
                         </div>
                     </Content>
                     <Footer style={{ textAlign: 'center' }}>Social91 - SpaceXData by Jyotikanta( +91 8270820320 )</Footer>
